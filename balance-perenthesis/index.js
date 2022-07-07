@@ -5,9 +5,6 @@ function peek(stack) {
 function isBlanced(str) {
   let stack = [];
 
-  stack.push();
-  stack.pop();
-
   // iterate through every letter of the string
   for (let i = 0; i < str.length; i++) {
     let letter = str.charAt(i);
@@ -19,6 +16,8 @@ function isBlanced(str) {
 
     if (letter === ")") {
       // if the letter is a closing paren make sure it has matching opening peran
+      if (stack.length === 0) false;
+
       if (peek(stack) === "(") {
         stack.pop();
       } else false;
